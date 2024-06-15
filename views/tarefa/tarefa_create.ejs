@@ -1,46 +1,86 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<style>
+  body {
+    background-color: rgba(17, 24, 39, 1) !important;
+  }
+
+  .card-header {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .card-header, .save-btn{
+    background-color: #12355B !important;
+    color: white !important;
+  }
+
+  .save-btn{
+    margin: 0 auto;
+    width: 6rem;
+
+  }
+  .btn-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h3{
+    text-align: center;
+  }
+</style>
+
 <%- include('../header') %>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 mx-auto mt-4">
-        <div class="card shadow">
-          <div class="card-header bg-dark">
-            <h3 class="text-light">Adicionar Tarefa</h3>
-          </div>
-          <div class="card-body p-4">
-            <form action="/tarefa" method="POST">
-              <div class="mb-3">
-                <label for="descricao" class="col-sm-3 col-form-label col-form-label-lg">Descrição:</label>
-                <input type="text" name="descricao" class="form-control form-control-lg" placeholder="Informe a Descrição..."
-                  required />
-              </div>
-              <div class="mb-3">
-                <label for="situacao" class="col-sm-3 col-form-label col-form-label-lg">Situação:</label>
-                <select id="situacao" name="situacao" class="form-control form-control-lg" required >
-                  <option value="Não iniciada">Não iniciada</option>
-                  <option value="Iniciada">Iniciada</option>
-                  <option value="Em Andamento">Em Andamento</option>
-                  <option value="Concluída ">Concluída</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="data_abertura" class="col-sm-5 col-form-label col-form-label-lg">Data de Abertura:</label>
-                <input type="date" name="data_abertura" class="form-control form-control-lg"
-                  placeholder="Informe a Data de Abertura..." required />
-              </div>
-              <div class="mb-3">
-                <label for="data_conclusao" class="col-sm-5 col-form-label col-form-label-lg">Data de Conclusão:</label>
-                <input type="date" name="data_conclusao" class="form-control form-control-lg"
-                  placeholder="Informe a Data de Conclusão..." required />
-              </div>
-              <div class="mb-3 d-grid">
-                <input type="submit" name="submit" value="Gravar" class="btn btn-dark btn-lg" />
-              </div>
-            </form>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+          <div class="card shadow">
+            <div class="card-header">
+              <h3 class="text-light">Nova Tarefa</h3>
+            </div>
+            <div class="card-body p-4">
+              <form action="/tarefa" method="POST">
+                <div class="mb-3">
+                  <input type="text" name="descricao" class="form-control form-control-lg"
+                    placeholder="Descrição da tarefa" required />
+                </div>
+                <div class="mb-3">
+                  <label for="situacao" class="col-sm-3 col-form-label col-form-label-lg">Situação:</label>
+                  <select id="situacao" name="situacao" class="form-control form-control-lg" required>
+                    <option value="Não iniciada">Não iniciada</option>
+                    <option value="Iniciada">Iniciada</option>
+                    <option value="Em Andamento">Em Andamento</option>
+                    <option value="Concluída ">Concluída</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="data_abertura" class="col-sm-5 col-form-label col-form-label-lg">Data de Abertura:</label>
+                  <input type="date" name="data_abertura" class="form-control form-control-lg" required />
+                </div>
+                <div class="mb-3">
+                  <label for="data_conclusao" class="col-sm-5 col-form-label col-form-label-lg">Data de
+                    Conclusão:</label>
+                  <input type="date" name="data_conclusao" class="form-control form-control-lg" required />
+                </div>
+                <div class="mb-3 d-grid btn-container">
+                  <input type="submit" name="submit" value="Salvar" class="btn btn-lg save-btn" />
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </body>
 
-<%- include('../footer') %>
+
+  <%- include('../footer') %>
