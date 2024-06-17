@@ -13,6 +13,28 @@
       background-color: #12355B !important;
       color: white;
     }
+
+    .botao-tarefa .fas,
+      .botao-tarefa {
+        color: rgba(255, 255, 255, 0.603) !important;
+
+      }
+
+      .botao-tarefa .fas:hover,
+      .botao-tarefa:hover{
+        color: rgb(46, 172, 245) !important;
+      }
+
+
+
+      .btns{
+        margin-bottom: 0;
+      }
+
+      .no-task-text{
+        margin-bottom: 2rem;
+      }
+
   </style>
 
   <body>
@@ -66,11 +88,21 @@
             </thread>
           </table>
           <% if ( tarefas=='' ) { %>
-            <h1 class="text-center text-secondary mt-5">
-              Nenhuma tarefa encontrada! :(
-            </h1>
+            <h2 class="text-center text-secondary mt-5 no-task-text">
+              Nenhuma tarefa cadastrada.
+            </h2>
+            <p class="text-center text-secondary btns">
+              <a class="btn btn-lg btn-custom botao-tarefa" href="/tarefa/create"> <i class="fa-solid fa-circle-plus"></i> Criar Tarefa </a>
+            </p>
+            <p class="text-center text-secondary btns">
+              <a class="btn btn-lg btn-custom botao-tarefa" href="/"> <i class="fa-solid fa-arrow-left"></i> Tela Inicial </a>
+            </p>
             <% } %>
         </div>
+
+        <p class="text-center text-secondary btns">
+          <a class="btn btn-lg btn-custom botao-tarefa" href="/"> <i class="fa-solid fa-arrow-left"></i> Tela Inicial </a>
+        </p>
       </div>
     </div>
 

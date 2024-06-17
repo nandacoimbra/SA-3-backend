@@ -9,39 +9,86 @@
       body {
         background-color: rgba(17, 24, 39, 1);
         font-family: "Bebas Neue", sans-serif;
+        height: 75vh;
+       
       }
 
       .custom-container {
+        
         background-color: rgb(14, 19, 31);
         border-radius: 2rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
       }
 
       .botao-tarefa .fas,
       .botao-tarefa {
-        color: white !important;
+        color: rgba(255, 255, 255, 0.603) !important;
 
+      }
+
+      .botao-tarefa .fas:hover,
+      .botao-tarefa:hover{
+        color: rgb(46, 172, 245) !important;
       }
 
       h1{
         padding-top: 2rem;
+        margin-bottom: 3rem;
+        color: white !important;
       }
 
+      p{
+        width: 100%;
+        margin-bottom: 0;
+        text-align: center;
+    
+      }
+
+      .botao-tarefa{
+        width: 300px;
+        text-align: left;
+      }
+
+      .fa-solid {
+        margin-right: 2rem;
+      }
+
+      .support{
+        width: 10%;
+        height: auto;
+        position: absolute;
+        right: 9rem;
+        top: 26rem;
+        
+      }
       
     </style>
   </head>
 
   <body>
     <div class="container custom-container">
-      <h1 class="text-center text-secondary mt-5">
+      <h1 class="text-center mt-5">
        Gerenciamento de tarefas
       </h1>
       
-      <p class="text-center text-secondary mt-5">
-        <a class="btn btn-lg btn-custom botao-tarefa" href="/tarefa"> <i class="fas fa-eye me-1"></i> Ver Tarefas </a>
+      <p class="text-center text-secondary ">
+        <a class="btn btn-lg btn-custom botao-tarefa" href="/tarefa"><i class="fa-solid fa-list-check"></i> Tarefas Cadastradas</a>
       </p>
+      <p class="text-center text-secondary ">
+        <a class="btn btn-lg btn-custom botao-tarefa" href="/tarefa/create"> <i class="fa-solid fa-circle-plus"></i> Nova Tarefa </a>
+      </p>
+      <p class="text-center text-secondary ">
+        <a class="btn btn-lg btn-custom botao-tarefa" href="https://github.com/nandacoimbra/SA-3-backend" target="_blank"> <i class="fa-solid fa-headset"></i> Fale Conosco </a>
+      </p>
+
+      <img src="https://cdn-icons-png.flaticon.com/512/4961/4961759.png" alt="" class="support">
+
     </div>
 
-  </body>
+  <!-- </body> -->
 
 
   <%- include('footer') %>
